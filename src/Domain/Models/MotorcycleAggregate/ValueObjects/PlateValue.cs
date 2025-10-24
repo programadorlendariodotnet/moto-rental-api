@@ -3,7 +3,7 @@ using Shared.Extensions;
 using Shared.Identifies.Contexts;
 using Shared.Results.Errors.Default;
 
-namespace Domain.Models.MotorcycleAggregate.ValueObjects.Motorcycle;
+namespace Domain.Models.MotorcycleAggregate.ValueObjects;
 
 public class PlateValue(string value)
 {

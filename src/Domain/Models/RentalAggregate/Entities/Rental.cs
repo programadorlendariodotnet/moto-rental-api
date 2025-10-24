@@ -1,7 +1,7 @@
-﻿using Domain.Models.MotorcycleAggregate.ValueObjects.Shared;
+﻿using Domain.Models.Shared.ValueObjects;
 using FluentResults;
 
-namespace Domain.Models.MotorcycleAggregate.Entities;
+namespace Domain.Models.RentalAggregate.Entities;
 
 public class Rental
 {

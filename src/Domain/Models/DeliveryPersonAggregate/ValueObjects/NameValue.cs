@@ -3,9 +3,9 @@ using Shared.Extensions;
 using Shared.Identifies.Contexts;
 using Shared.Results.Errors.Default;
 
-namespace Domain.Models.MotorcycleAggregate.ValueObjects.DeliveryPerson;
+namespace Domain.Models.DeliveryPersonAggregate.ValueObjects;
 
-public class CnpjValue(string value)
+public class NameValue(string value)
 {
     public const int FieldMinLength = 1;
     public const int FieldMaxLength = 50;
@@ -24,7 +24,7 @@ public class CnpjValue(string value)
 
     private static Result Validate(string value, string entity)
     {
-        const string fieldName = "cnpj";
+        const string fieldName = "name";
 
         if (!IsValidNotEmpty(value).Value)
             return new EmptyFieldError(
@@ -45,9 +45,9 @@ public class CnpjValue(string value)
         return Result.Ok();
     }
 
-    public static Result<CnpjValue> Create(string reasonValue, string entity)
+    public static Result<NameValue> Create(string reasonValue, string entity)
     {
         var isValid = Validate(reasonValue, entity);
-        return isValid.IsFailed ? isValid : new CnpjValue(reasonValue);
+        return isValid.IsFailed ? isValid : new NameValue(reasonValue);
     }
 }

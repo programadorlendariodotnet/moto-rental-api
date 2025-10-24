@@ -1,9 +1,9 @@
-﻿using Domain.Models.MotorcycleAggregate.Enums;
-using Domain.Models.MotorcycleAggregate.ValueObjects.DeliveryPerson;
-using Domain.Models.MotorcycleAggregate.ValueObjects.Shared;
+﻿using Domain.Models.DeliveryPersonAggregate.Enums;
+using Domain.Models.DeliveryPersonAggregate.ValueObjects;
+using Domain.Models.Shared.ValueObjects;
 using FluentResults;
 
-namespace Domain.Models.MotorcycleAggregate.Entities;
+namespace Domain.Models.DeliveryPersonAggregate.Entities;
 
 public class DeliveryPerson
 {

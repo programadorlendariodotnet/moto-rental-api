@@ -1,5 +1,5 @@
-﻿using Domain.Models.MotorcycleAggregate.ValueObjects.Motorcycle;
-using Domain.Models.MotorcycleAggregate.ValueObjects.Shared;
+﻿using Domain.Models.MotorcycleAggregate.ValueObjects;
+using Domain.Models.Shared.ValueObjects;
 using FluentResults;
 
 namespace Domain.Models.MotorcycleAggregate.Entities;

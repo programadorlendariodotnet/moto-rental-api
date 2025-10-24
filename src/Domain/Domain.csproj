@@ -13,10 +13,6 @@
 	</ItemGroup>
 	
   <ItemGroup>
-    <Folder Include="Models\MotorcycleAggregate\DTOs\" />
-  </ItemGroup>
-	
-  <ItemGroup>
     <ProjectReference Include="..\Shared\Shared.csproj" />
   </ItemGroup>
 

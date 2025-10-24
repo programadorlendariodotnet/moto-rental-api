@@ -3,14 +3,19 @@ using Shared.Extensions;
 using Shared.Identifies.Contexts;
 using Shared.Results.Errors.Default;
 
-namespace Domain.Models.MotorcycleAggregate.ValueObjects.DeliveryPerson;
+namespace Domain.Models.MotorcycleAggregate.ValueObjects;
 
-public class ImageUrlValue(string value)
+public class ModelValue(string value)
 {
     public const int FieldMinLength = 1;
     public const int FieldMaxLength = 50;
 
     public string Value { get; } = value;
+
+    private static Result<bool> IsValidNotEmpty(string value)
+    {
+        return value.IsValid();
+    }
 
     private static Result<bool> IsValidLength(string value)
     {
@@ -19,10 +24,14 @@ public class ImageUrlValue(string value)
 
     private static Result Validate(string value, string entity)
     {
-        const string fieldName = "image url";
+        const string fieldName = "model";
 
-        if (string.IsNullOrEmpty(value))
-            return Result.Ok();
+        if (!IsValidNotEmpty(value).Value)
+            return new EmptyFieldError(
+                entity,
+                fieldName,
+                ContextType.Domain
+            );
 
         if (!IsValidLength(value).Value)
             return new InvalidLengthError(
@@ -36,9 +45,9 @@ public class ImageUrlValue(string value)
         return Result.Ok();
     }
 
-    public static Result<ImageUrlValue> Create(string reasonValue, string entity)
+    public static Result<ModelValue> Create(string reasonValue, string entity)
     {
         var isValid = Validate(reasonValue, entity);
-        return isValid.IsFailed ? isValid : new ImageUrlValue(reasonValue);
+        return isValid.IsFailed ? isValid : new ModelValue(reasonValue);
     }
 }

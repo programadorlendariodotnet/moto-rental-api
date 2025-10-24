@@ -1,4 +1,4 @@
-﻿namespace Domain.Models.MotorcycleAggregate.Enums;
+﻿namespace Domain.Models.DeliveryPersonAggregate.Enums;
 
 public enum CnhType
 {

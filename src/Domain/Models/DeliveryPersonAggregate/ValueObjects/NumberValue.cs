@@ -3,9 +3,9 @@ using Shared.Extensions;
 using Shared.Identifies.Contexts;
 using Shared.Results.Errors.Default;
 
-namespace Domain.Models.MotorcycleAggregate.ValueObjects.Motorcycle;
+namespace Domain.Models.DeliveryPersonAggregate.ValueObjects;
 
-public class ModelValue(string value)
+public class NumberValue(string value)
 {
     public const int FieldMinLength = 1;
     public const int FieldMaxLength = 50;
@@ -24,7 +24,7 @@ public class ModelValue(string value)
 
     private static Result Validate(string value, string entity)
     {
-        const string fieldName = "model";
+        const string fieldName = "number";
 
         if (!IsValidNotEmpty(value).Value)
             return new EmptyFieldError(
@@ -45,9 +45,9 @@ public class ModelValue(string value)
         return Result.Ok();
     }
 
-    public static Result<ModelValue> Create(string reasonValue, string entity)
+    public static Result<NumberValue> Create(string reasonValue, string entity)
     {
         var isValid = Validate(reasonValue, entity);
-        return isValid.IsFailed ? isValid : new ModelValue(reasonValue);
+        return isValid.IsFailed ? isValid : new NumberValue(reasonValue);
     }
 }
