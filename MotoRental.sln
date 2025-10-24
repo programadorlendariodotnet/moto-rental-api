@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence", "src\Persiste
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageQueue", "src\MessageQueue\MessageQueue.csproj", "{3DEF8117-5DB2-4646-AD50-A12ACEE9C082}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SharedKernel", "SharedKernel", "{1527CBF4-80AE-4BD4-9782-45B205789A66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "src\Shared\Shared.csproj", "{E27DF64D-65C4-4D07-A364-9B0605B601A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +57,10 @@ Global
 		{3DEF8117-5DB2-4646-AD50-A12ACEE9C082}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3DEF8117-5DB2-4646-AD50-A12ACEE9C082}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3DEF8117-5DB2-4646-AD50-A12ACEE9C082}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E27DF64D-65C4-4D07-A364-9B0605B601A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E27DF64D-65C4-4D07-A364-9B0605B601A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E27DF64D-65C4-4D07-A364-9B0605B601A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E27DF64D-65C4-4D07-A364-9B0605B601A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,6 +72,7 @@ Global
 		{CEE28634-75F3-4D3E-AB14-D690F1C7BED8} = {2DBBA3A6-829C-479C-8048-C3C6DC3AB68D}
 		{A5C2734F-04BF-48AF-859D-791AE4F5984D} = {EB865AA8-DAA7-463C-8B50-DD03E6C31F37}
 		{3DEF8117-5DB2-4646-AD50-A12ACEE9C082} = {EB865AA8-DAA7-463C-8B50-DD03E6C31F37}
+		{E27DF64D-65C4-4D07-A364-9B0605B601A2} = {1527CBF4-80AE-4BD4-9782-45B205789A66}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7178D915-03A2-453B-9220-22CE21CF7949}
