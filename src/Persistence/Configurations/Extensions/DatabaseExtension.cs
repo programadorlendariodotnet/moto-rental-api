@@ -1,8 +1,17 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Domain.Contracts.DeliveryPersons;
+using Domain.Contracts.Motorcycles;
+using Domain.Contracts.Motorcycles.Generics;
+using Domain.Contracts.Rentals;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Persistence.Configurations.Options;
 using Persistence.Context;
+using Persistence.Repositories.DeliveryPersons;
+using Persistence.Repositories.Generics;
+using Persistence.Repositories.Motorcycles;
+using Persistence.Repositories.Rentals;
+using Persistence.Repositories.UnitOfWork;
 
 namespace Persistence.Configurations.Extensions;
 

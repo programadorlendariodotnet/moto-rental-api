@@ -10,6 +10,7 @@ public static class PersistenceDependencyInjection
        IConfiguration configuration)
     {
         services.AddPersistence(configuration);
+        services.AddRepositories();
 
         return services;
     }

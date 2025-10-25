@@ -8,7 +8,7 @@ namespace Domain.Models.Shared.ValueObjects;
 public class UIdValue(string value)
 {
     public const int FieldMinLength = 1;
-    public const int FieldMaxLength = 150;
+    public const int FieldMaxLength = 50;
 
     public string Value { get; } = value;
 
