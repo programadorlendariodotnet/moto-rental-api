@@ -7,8 +7,8 @@ public class Rental
 {
     public int Id { get; private set; }
     public UIdValue UId { get; private set; }
-    public Guid DeliveryPersonUId { get; private set; }
-    public Guid MotorcycleUId { get; private set; }
+    public int DeliveryPersonId { get; private set; }
+    public int MotorcycleId { get; private set; }
     public DateTime StartDate { get; private set; }
     public DateTime ExpectedEndDate { get; private set; }
     public DateTime? EndDate { get; private set; }
@@ -20,8 +20,8 @@ public class Rental
 
     public static Result<Rental> Create(
         string uId,
-        Guid deliveryPersonUId,
-        Guid motorcycleUId,
+        int deliveryPersonId,
+        int motorcycleId,
         int days,
         decimal dailyRate)
     {
@@ -29,8 +29,8 @@ public class Rental
 
         var result = Result.Merge(
             rental.SetUId(uId),
-            rental.SetDeliveryPersonUId(deliveryPersonUId),
-            rental.SetMotorcycleUId(motorcycleUId),
+            rental.SetDeliveryPersonId(deliveryPersonId),
+            rental.SetMotorcycleId(motorcycleId),
             rental.SetDays(days),
             rental.SetDailyRate(dailyRate),
             rental.SetStartAndExpectedDates(days)
@@ -53,21 +53,23 @@ public class Rental
     }
 
 
-    private Result SetDeliveryPersonUId(Guid id)
+    private Result SetDeliveryPersonId(int id)
     {
-        if (id == Guid.Empty)
-            return Result.Fail("Invalid delivery person UId.");
+        if (id == 0)
+            return Result.Fail("Invalid delivery person Id.");
 
-        DeliveryPersonUId = id;
+        DeliveryPersonId = id;
+
         return Result.Ok();
     }
 
-    private Result SetMotorcycleUId(Guid id)
+    private Result SetMotorcycleId(int id)
     {
-        if (id == Guid.Empty)
-            return Result.Fail("Invalid motorcycle UId.");
+        if (id == 0)
+            return Result.Fail("Invalid motorcycle Id.");
 
-        MotorcycleUId = id;
+        MotorcycleId = id;
+
         return Result.Ok();
     }
 

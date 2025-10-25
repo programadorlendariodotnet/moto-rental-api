@@ -8,7 +8,7 @@ namespace Domain.Models.DeliveryPersonAggregate.ValueObjects;
 public class NameValue(string value)
 {
     public const int FieldMinLength = 1;
-    public const int FieldMaxLength = 50;
+    public const int FieldMaxLength = 100;
 
     public string Value { get; } = value;
 
