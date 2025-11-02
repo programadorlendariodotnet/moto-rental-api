@@ -1,0 +1,46 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: motorrental_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: motorrental
+    ports:
+      - "5432:5432"
+    volumes:
+      - motorrental_pgdata:/var/lib/postgresql/data
+    networks:
+      - motorrental_network
+
+  localstack:
+    image: localstack/localstack:3.4
+    container_name: motorrental_localstack
+    restart: unless-stopped
+    environment:
+      - SERVICES=s3,sqs,sns
+      - DEBUG=0
+      - DATA_DIR=/tmp/localstack/data
+      - DEFAULT_REGION=us-east-1
+      - AWS_DEFAULT_REGION=us-east-1
+      - AWS_ACCESS_KEY_ID=test
+      - AWS_SECRET_ACCESS_KEY=test
+      - HOSTNAME_EXTERNAL=localhost
+    ports:
+      - "4566:4566"  # Porta padrão do LocalStack
+      - "4571:4571"
+    volumes:
+      - "./.localstack:/tmp/localstack"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    networks:
+      - motorrental_network
+
+volumes:
+  motorrental_pgdata:
+
+networks:
+  motorrental_network:
+    driver: bridge
