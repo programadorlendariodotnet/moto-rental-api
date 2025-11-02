@@ -18,4 +18,16 @@ public class MotorcycleWriteRepository : WriteRepository<Motorcycle>, IMotorcycl
             .Where(m => m.UId.Value == uId)
             .FirstOrDefaultAsync();
     }
+
+    public async Task<bool> AnyByPlateAsync(string plate)
+    {
+        return await _dbSet
+            .AnyAsync(m => m.Plate.Value.ToLower() == plate.ToLower());
+    }
+
+    public async Task<bool> AnyByPlateWithDiferentUIdAsync(string plate, string uId)
+    {
+        return await _dbSet
+            .AnyAsync(m => m.Plate.Value.ToLower() == plate.ToLower() && m.UId.Value != uId);
+    }
 }

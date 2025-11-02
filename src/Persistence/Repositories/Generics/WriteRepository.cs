@@ -1,15 +1,15 @@
-﻿using Domain.Contracts.Motorcycles.Generics;
+﻿using Domain.Contracts.Generics;
 using Microsoft.EntityFrameworkCore;
 using Persistence.Context;
 
 namespace Persistence.Repositories.Generics;
 
-public class WriteRepository<T> : IWriteRepository<T> where T : class
+public class WriteRepository<T> : UnitOfWork, IWriteRepository<T> where T : class
 {
     protected readonly WriteDataContext _context;
     protected readonly DbSet<T> _dbSet;
 
-    public WriteRepository(WriteDataContext context)
+    public WriteRepository(WriteDataContext context) : base(context)
     {
         _context = context;
         _dbSet = context.Set<T>();

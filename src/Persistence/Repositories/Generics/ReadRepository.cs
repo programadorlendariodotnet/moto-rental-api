@@ -1,4 +1,4 @@
-﻿using Domain.Contracts.Motorcycles.Generics;
+﻿using Domain.Contracts.Generics;
 using Microsoft.EntityFrameworkCore;
 using Persistence.Context;
 

@@ -24,7 +24,7 @@ public class MotorcycleReadRepository : ReadRepository<Motorcycle>, IMotorcycleR
     public async Task<List<MotorcycleDto>> GetAllByPlateAsync(string plate, CancellationToken cancellationToken)
     {
         return await _dbSet
-            .Where(m => m.Plate.Value.ToLower() == plate.ToLower())
+            .Where(m => m.Plate.Value.ToLower().Contains(plate.ToLower()))
             .Select(m => new MotorcycleDto(
                 m.UId.Value, 
                 m.Year, 

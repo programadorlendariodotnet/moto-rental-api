@@ -23,7 +23,7 @@ public class DeliveryPersonReadRepository : ReadRepository<DeliveryPerson>, IDel
                 d.Cnpj.Value,
                 d.BirthDate,
                 d.CnhNumber.Value,
-                d.CnhType.Description,
+                d.CnhType.ToString(),
                 d.CnhImageUrl != null ? d.CnhImageUrl.Value : null))
             .FirstOrDefaultAsync();
     }
@@ -37,7 +37,7 @@ public class DeliveryPersonReadRepository : ReadRepository<DeliveryPerson>, IDel
                 d.Cnpj.Value,
                 d.BirthDate,
                 d.CnhNumber.Value,
-                d.CnhType.Description,
+                d.CnhType.ToString(),
                 d.CnhImageUrl != null ? d.CnhImageUrl.Value : null))
             .ToListAsync(cancellationToken);
     }

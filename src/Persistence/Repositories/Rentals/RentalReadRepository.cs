@@ -45,4 +45,10 @@ public class RentalReadRepository : ReadRepository<Rental>, IRentalReadRepositor
                 r.TotalAmount))
             .ToListAsync(cancellationToken);
     }
+
+    public async Task<bool> AnyByMotorcycleIdAsync(int id, CancellationToken cancellationToken = default)
+    {
+        return await _dbSet
+            .AnyAsync(m => m.MotorcycleId == id);
+    }
 }

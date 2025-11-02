@@ -23,7 +23,7 @@ public class CnhTypeMapping : IEntityTypeConfiguration<CnhType>
             .HasMaxLength(10)
             .IsRequired();
 
-        builder.HasData(Enum.GetValues(typeof(Enums.CnhType))
+        builder.HasData(Enum.GetValues<Enums.CnhType>()
             .Cast<Enums.CnhType>()
             .Select(e => CnhType.Create(e, $"{e}")));
     }
