@@ -31,6 +31,16 @@ public class Motorcycle
         return Result.Ok(motorcycle);
     }
 
+    public Result Update(string plate)
+    {
+        var result = Result.Merge(SetPlate(plate));
+
+        if (result.IsFailed)
+            return result;
+
+        return result.IsFailed ? result : Result.Ok();
+    }
+
     private Result SetYear(int year)
     {
         Year = year;

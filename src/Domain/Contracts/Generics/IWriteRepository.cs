@@ -1,6 +1,6 @@
-﻿namespace Domain.Contracts.Motorcycles.Generics;
+﻿namespace Domain.Contracts.Generics;
 
-public interface IWriteRepository<T> where T : class
+public interface IWriteRepository<T>: IUnitOfWork where T : class
 {
     Task<T?> GetByIdAsync(int id, CancellationToken cancellationToken = default);
     Task CreateAsync(T entity, CancellationToken cancellationToken = default);

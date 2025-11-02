@@ -1,4 +1,4 @@
-﻿namespace Domain.Contracts.Motorcycles.Generics;
+﻿namespace Domain.Contracts.Generics;
 
 public interface IReadRepository<T> where T : class
 {

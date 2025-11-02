@@ -1,11 +1,8 @@
-﻿using Domain.Models.Shared.ValueObjects;
-
-namespace Domain.Models.DeliveryPersonAggregate.Entities;
+﻿namespace Domain.Models.DeliveryPersonAggregate.Entities;
 
 public sealed class CnhType
 {
     public int Id { get; private set; }
-    public UIdValue UId { get; private set; }
     public string Description { get; private set; }
 
     private CnhType() { }

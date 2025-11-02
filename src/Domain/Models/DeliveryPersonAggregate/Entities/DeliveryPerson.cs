@@ -1,5 +1,4 @@
-﻿using Domain.Models.DeliveryPersonAggregate.Enums;
-using Domain.Models.DeliveryPersonAggregate.ValueObjects;
+﻿using Domain.Models.DeliveryPersonAggregate.ValueObjects;
 using Domain.Models.Shared.ValueObjects;
 using FluentResults;
 
@@ -11,9 +10,9 @@ public class DeliveryPerson
     public UIdValue UId { get; private set; }
     public NameValue Name { get; private set; }
     public CnpjValue Cnpj { get; private set; }
-    public DateTime BirthDate { get; private set; } // Criar value Obj
+    public DateTime BirthDate { get; private set; }
     public NumberValue CnhNumber { get; private set; }
-    public CnhType CnhType { get; private set; } // Criar Enum
+    public Enums.CnhType CnhType { get; private set; }
     public ImageUrlValue? CnhImageUrl { get; private set; }
 
     private DeliveryPerson() { }
@@ -24,7 +23,7 @@ public class DeliveryPerson
         string cnpj,
         DateTime birthDate,
         string cnhNumber,
-        CnhType cnhType)
+        Enums.CnhType cnhType)
     {
         var entity = new DeliveryPerson();
 
@@ -91,7 +90,7 @@ public class DeliveryPerson
         return creation.ToResult();
     }
 
-    private Result SetCnhType(CnhType type)
+    private Result SetCnhType(Enums.CnhType type)
     {
         CnhType = type;
 

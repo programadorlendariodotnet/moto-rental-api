@@ -1,4 +1,4 @@
-﻿using Domain.Contracts.Motorcycles.Generics;
+﻿using Domain.Contracts.Generics;
 using Domain.Models.MotorcycleAggregate.DTOs;
 using Domain.Models.MotorcycleAggregate.Entities;
 
